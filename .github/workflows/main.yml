@@ -28,8 +28,8 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      # - name: Run unit tests
-      #   run: flutter test --coverage
+      - name: Run unit tests
+        run: flutter test --coverage
 
       # - name: Upload to code coverage
       #   uses: codecov/codecov-action@v1.2.2
@@ -55,8 +55,8 @@ jobs:
           name: Test result screenshots
           path: ss/*.png
 
-      - name: Releasing using Hub
-        uses: kyze8439690/action-release-releaseapk@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-          APP_FOLDER: build/app/outputs/apk/release
+      # - name: Releasing using Hub
+      #   uses: kyze8439690/action-release-releaseapk@master
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      #     APP_FOLDER: build/app/outputs/apk/release
