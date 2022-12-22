@@ -2,6 +2,8 @@
 
 Dating app for dogs
 
+![example branch parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?branch=main)
+
 ## Introduction
 
 Dinder, a dating app for dogs only, this app created to help users to choose what breed they want to choose for their own pet.
