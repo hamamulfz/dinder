@@ -9,44 +9,56 @@ import 'package:meta/meta.dart';
 part 'breed_detail_event.dart';
 part 'breed_detail_state.dart';
 
-class BreedDetailBloc extends Bloc<BreedDetailEvent, DogDetailState> {
+class BreedDetailBloc extends Bloc<BreedDetailEvent, BredDetailState> {
   final DogCeoApi _repository;
 
   BreedDetailBloc(this._repository) : super(DogBreedInitial()) {
     on<DogBreedImageFetch>(_onDogSelect);
+    on<DogBreedButtonLikeTapped>(_onDogLike);
+    on<DogBreedButtonDislikeTapped>(_onDogDislikeSelect);
+  }
+
+  Future<FutureOr<void>> _onDogLike(
+      DogBreedButtonLikeTapped event, Emitter<BredDetailState> emit) async {
+    emit(DogBreedImagesLoaded.newIndex(event.images, event.currentIndex));
+  }
+
+  Future<FutureOr<void>> _onDogDislikeSelect(
+      DogBreedButtonDislikeTapped event, Emitter<BredDetailState> emit) async {
+    emit(DogBreedImagesLoaded.newIndex(event.images, event.currentIndex));
   }
 
   Future<FutureOr<void>> _onDogSelect(
-      DogBreedImageFetch event, Emitter<DogDetailState> emit) async {
+      DogBreedImageFetch event, Emitter<BredDetailState> emit) async {
     emit(DogBreedImagesLoading());
     try {
       final images = await _repository.getBreedImages(event.breed);
-      emit(DogBreedImagesLoaded(event.breed, images));
+      emit(DogBreedImagesLoaded(images, 0, false));
     } on DioError catch (e) {
       switch (e.type) {
         case DioErrorType.other:
           if (e.error is SocketException) {
-            emit(DogBreedError(
+            emit(DogBreedDetailError(
               "Socket Exception. Do you have active internet connection?",
             ));
           } else {
-            emit(DogBreedError(
+            emit(DogBreedDetailError(
               "Cannot identify errors.",
             ));
           }
           break;
         case DioErrorType.connectTimeout:
         case DioErrorType.receiveTimeout:
-          emit(DogBreedError("Connection Timeout"));
+          emit(DogBreedDetailError("Connection Timeout"));
 
           break;
         case DioErrorType.response:
-          emit(DogBreedError("Fail to fetch data"));
+          emit(DogBreedDetailError("Fail to fetch data"));
           break;
         default:
       }
     } catch (e) {
-      emit(DogBreedError("Fail to fetch data"));
+      emit(DogBreedDetailError("Fail to fetch data"));
     }
   }
 }
