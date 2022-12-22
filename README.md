@@ -20,7 +20,7 @@ This app use an external data from [Dog Ceo Api](https://dog.ceo/api)
 
 This app depends on:
 
-- Flutter 3.3.4
+- Flutter 3.3.8
 - Dart 2.18
 - Dio 4.0.6
 - bloc and Flutter bloc
