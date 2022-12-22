@@ -1,21 +1,32 @@
 part of 'breed_list_bloc.dart';
 
-
 // These are the states that the BLoC can emit.
-abstract class BreedListState {}
+abstract class BreedListState extends Equatable {}
 
-class DogBreedInitial extends BreedListState {}
-
-class DogBreedLoading extends BreedListState {}
-
-class DogBreedLoaded extends BreedListState {
-  final List<String> breeds;
-
-  DogBreedLoaded(this.breeds);
+class BreedListInitial extends BreedListState {
+  @override
+  List<Object> get props => [];
 }
 
-class DogBreedError extends BreedListState {
+class BreedListLoading extends BreedListState {
+  @override
+  List<Object> get props => [];
+}
+
+class BreedListLoaded extends BreedListState {
+  final List<String> breeds;
+
+  BreedListLoaded(this.breeds);
+
+  @override
+  List<Object> get props => [breeds];
+}
+
+class BreedListError extends BreedListState {
   final String error;
 
-  DogBreedError(this.error);
+  BreedListError(this.error);
+
+  @override
+  List<Object> get props => [error];
 }

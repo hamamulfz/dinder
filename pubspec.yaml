@@ -32,13 +32,15 @@ dependencies:
   bloc: ^8.1.0
   cupertino_icons: ^1.0.2
   dio: ^4.0.6
+  dog_ceo_api:
+    path: ./dog_ceo_api
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.1
-  dog_ceo_api:
-    path: ./dog_ceo_api
+  equatable: ^2.0.5
 
 dev_dependencies:
+  bloc_test: ^9.1.0
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
