@@ -2,7 +2,7 @@
 
 Dating app for dogs
 
-![example branch parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?branch=main)
+![Development](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?branch=main)
 
 ## Introduction
 
