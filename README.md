@@ -29,8 +29,27 @@ This app depends on following environment:
 
 You will need to execute following command to get this app running:
 
-- flutter pub get
-- flutter run
+- clone the project
+
+```
+git clone https://github.com/hamamulfz/dinder.git dinder_fauzi
+```
+
+- get all dependencies
+
+```
+flutter pub get
+```
+
+- run the application
+
+```
+flutter run
+```
+
+## State Management
+
+This app use bloc as the state management library. altough I have experience more than three year as a Flutter Developer, this is my first app built with bloc. Why Bloc? Bloc has better documentation compared to other state management docs because it's provide example of how to use bloc along with the test scenario in the example source code. Before this, I always use GetX for managing state in my previous app.
 
 ## Acknowledgment
 
