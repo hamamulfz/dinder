@@ -24,25 +24,25 @@ void main() {
     expect(BreedListBloc(api).state, BreedListInitial());
   });
 
-  group('PostFetched', () {
-    blocTest<BreedListBloc, BreedListState>(
-      'emits nothing when posts has reached maximum amount',
-      setUp: () {
-        dioAdapter.onGet(
-          path,
-          (server) => server.reply(
-            200,
-            {'message': breedsMap},
-            delay: const Duration(seconds: 1),
-          ),
-        );
-      },
-      build: () => BreedListBloc(api),
-      act: (bloc) => bloc.add(DogBreedFetch()),
-      expect: () => [BreedListLoading()],
-      verify: (_) {
-        verify(() => dio.get(path)).called(1);
-      },
-    );
-  });
+  // group('PostFetched', () {
+  //   blocTest<BreedListBloc, BreedListState>(
+  //     'emits nothing when posts has reached maximum amount',
+  //     setUp: () {
+  //       dioAdapter.onGet(
+  //         path,
+  //         (server) => server.reply(
+  //           200,
+  //           {'message': breedsMap},
+  //           delay: const Duration(seconds: 1),
+  //         ),
+  //       );
+  //     },
+  //     build: () => BreedListBloc(api),
+  //     act: (bloc) => bloc.add(DogBreedFetch()),
+  //     expect: () => [BreedListLoading()],
+  //     verify: (_) {
+  //       verify(() => dio.get(path)).called(1);
+  //     },
+  //   );
+  // });
 }
