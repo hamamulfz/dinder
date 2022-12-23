@@ -9,7 +9,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   group('Breed Detail Screen', () {
     testWidgets('renders PostList', (tester) async {
-      const breed = "american";
+      const breed = "african";
       await tester.pumpWidget(const MaterialApp(home: BreedDetailScreen(breed)));
       await tester.pumpAndSettle();
       expect(find.byType(DogMatching), findsOneWidget);

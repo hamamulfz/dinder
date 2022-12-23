@@ -13,7 +13,7 @@ void main() {
     });
 
     test('loaded value comparison', () {
-      const breeds = ["afgan", "akita", "america"];
+      const breeds = ["eskimo", "akita", "african"];
       final breedList = BreedListLoaded(breeds);
       expect(BreedListLoaded(breeds), breedList);
       expect(

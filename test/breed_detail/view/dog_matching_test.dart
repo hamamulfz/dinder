@@ -11,7 +11,7 @@ class MockBreedDetailBloc extends MockBloc<BreedDetailEvent, BredDetailState>
 
 extension on WidgetTester {
   Future<void> pumpPostsList(BreedDetailBloc postBloc) {
-    const breed = "america";
+    const breed = "african";
     return pumpWidget(
       MaterialApp(
         home: BlocProvider.value(
