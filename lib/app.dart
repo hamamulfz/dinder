@@ -6,6 +6,8 @@ import 'pages/breed_list/view/breed_list_screen.dart';
 
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: BreedListScreen(),
+      home: const BreedListScreen(),
     );
   }
 }

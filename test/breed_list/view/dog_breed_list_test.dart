@@ -3,6 +3,7 @@ import 'package:dinder/pages/breed_list/breed_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
+// ignore: depend_on_referenced_packages
 import 'package:mocktail/mocktail.dart';
 
 class MockBreedListBloc extends MockBloc<BreedListEvent, BreedListState>
@@ -14,7 +15,7 @@ extension on WidgetTester {
       MaterialApp(
         home: BlocProvider.value(
           value: postBloc,
-          child: Scaffold(body: const DogBreedList()),
+          child: const Scaffold(body: DogBreedList()),
         ),
       ),
     );
@@ -42,7 +43,7 @@ void main() {
         'renders listTile '
         'when data returned successfully', (tester) async {
       when(() => breedBloc.state).thenReturn(
-        BreedListLoaded(["afgan", 'african', "akita"]),
+        BreedListLoaded(const ["afgan", 'african', "akita"]),
       );
       await tester.pumpPostsList(breedBloc);
       expect(find.byType(ListTile), findsNWidgets(3));

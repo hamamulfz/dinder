@@ -5,7 +5,6 @@ import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:dog_ceo_api/dog_ceo_api.dart';
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
 
 part 'breed_detail_event.dart';
 part 'breed_detail_state.dart';
@@ -13,7 +12,7 @@ part 'breed_detail_state.dart';
 class BreedDetailBloc extends Bloc<BreedDetailEvent, BredDetailState> {
   final DogCeoApi _repository;
 
-  BreedDetailBloc(this._repository) : super(DogBreedInitial()) {
+  BreedDetailBloc(this._repository) : super(DogBreedDetailInitial()) {
     on<DogBreedImageFetch>(_onDogSelect);
     on<DogBreedButtonLikeTapped>(_onDogLike);
     on<DogBreedButtonDislikeTapped>(_onDogDislikeSelect);
@@ -21,7 +20,10 @@ class BreedDetailBloc extends Bloc<BreedDetailEvent, BredDetailState> {
 
   Future<FutureOr<void>> _onDogLike(
       DogBreedButtonLikeTapped event, Emitter<BredDetailState> emit) async {
-    emit(DogBreedImagesLoaded.newIndex(event.images, event.currentIndex));
+        final current = DogBreedImagesLoaded.newIndex(event.images, event.currentIndex);
+        
+        
+    emit(current);
   }
 
   Future<FutureOr<void>> _onDogDislikeSelect(
@@ -34,7 +36,9 @@ class BreedDetailBloc extends Bloc<BreedDetailEvent, BredDetailState> {
     emit(DogBreedImagesLoading());
     try {
       final images = await _repository.getBreedImages(event.breed);
-      emit(DogBreedImagesLoaded(images, 0, false));
+      emit(DogBreedImagesLoaded(
+        images
+      ));
     } on DioError catch (e) {
       switch (e.type) {
         case DioErrorType.other:

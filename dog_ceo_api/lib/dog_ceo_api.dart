@@ -11,13 +11,13 @@ class DogCeoApi {
   // Fetch the list of all dog breeds from the API.
   Future<List<String>> getBreeds() async {
     final response = await _dio.get('https://dog.ceo/api/breeds/list/all');
-    print(response.data);
+    
 
     List<String> list = (response.data['message'] as Map<String, dynamic>)
         .keys
         .map((e) => e)
         .toList();
-    print(list);
+    
     return list;
   }
 
@@ -26,9 +26,9 @@ class DogCeoApi {
     final response =
         await _dio.get('https://dog.ceo/api/breed/$breed/images/random/10');
     List<String> listImage = [];
-    (response.data['message'] as List).forEach((element) {
+    for (var element in (response.data['message'] as List)) {
       listImage.add(element);
-    });
+    }
     return listImage;
   }
 }

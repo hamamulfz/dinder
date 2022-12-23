@@ -4,7 +4,6 @@ import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:dog_ceo_api/dog_ceo_api.dart';
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
 
 part 'breed_list_event.dart';
 part 'breed_list_state.dart';

@@ -2,7 +2,6 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:dog_ceo_api/dog_ceo_api.dart';
 import 'package:dio/dio.dart';
-import 'package:mockito/mockito.dart';
 import 'package:http_mock_adapter/http_mock_adapter.dart';
 
 void main() {
@@ -23,15 +22,15 @@ void main() {
     );
     final api = DogCeoApi(dio);
     final response = await api.getBreeds();
-    print(response);
+    
     expect(response, equals(breedsMap.keys.toList()));
   });
 
   test('Test getBreedImages()', () async {
     final dio = Dio(BaseOptions());
     final dioAdapter = DioAdapter(dio: dio);
-    final breed = 'breed1';
-    final path = 'https://dog.ceo/api/breed/$breed/images/random/10';
+    const breed = 'breed1';
+    const path = 'https://dog.ceo/api/breed/$breed/images/random/10';
     final images = ['image1', 'image2', 'image3'];
 
     dioAdapter.onGet(

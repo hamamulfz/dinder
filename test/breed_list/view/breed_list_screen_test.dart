@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  group('BreedLisScreen', () {
+  group('BreedListScreen', () {
     testWidgets('renders PostList', (tester) async {
-      await tester.pumpWidget(MaterialApp(home: BreedListScreen()));
+      await tester.pumpWidget(const MaterialApp(home: BreedListScreen()));
       await tester.pumpAndSettle();
       expect(find.byType(DogBreedList), findsOneWidget);
     });

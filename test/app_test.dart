@@ -7,15 +7,13 @@
 
 import 'package:dinder/app.dart';
 import 'package:dinder/pages/breed_list/view/breed_list_screen.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:dinder/main.dart';
 
 void main() {
   group('App', () {
     testWidgets('renders BreedListScreen', (tester) async {
-      await tester.pumpWidget(MyApp());
+      await tester.pumpWidget(const MyApp());
       await tester.pumpAndSettle();
       expect(find.byType(BreedListScreen), findsOneWidget);
     });
