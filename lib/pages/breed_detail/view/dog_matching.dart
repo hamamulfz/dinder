@@ -33,7 +33,6 @@ class DogMatching extends StatelessWidget {
             return SizedBox(
               width: double.infinity,
               child: Column(
-                // crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   DogBreedImage(
                     imageUrl: state.images[

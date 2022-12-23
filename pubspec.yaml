@@ -41,11 +41,17 @@ dependencies:
 
 dev_dependencies:
   bloc_test: ^9.1.0
+  flutter_launcher_icons: ^0.11.0
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
   http_mock_adapter: ^0.3.3
 
+# run `flutter pub run flutter_launcher_icons` to execute launcher icon
+flutter_icons:
+  android: "ic_launcher"
+  ios: true
+  image_path: "assets/app_icon.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.

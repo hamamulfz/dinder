@@ -8,7 +8,7 @@ import 'package:equatable/equatable.dart';
 part 'breed_list_event.dart';
 part 'breed_list_state.dart';
 
-// This is the BLoC that manages the state of the app.
+
 class BreedListBloc extends Bloc<BreedListEvent, BreedListState> {
   final DogCeoApi _repository;
 

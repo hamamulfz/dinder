@@ -11,13 +11,8 @@ class BreedListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final breedListBloc = BlocProvider.of<DogBreedBloc>(context);
-    // Dispatch a fetch event to the BLoC to load the list of breeds.
-    // Create a Dio instance that will be used to make HTTP requests.
     final dio = Dio();
-    // breedListBloc.add(DogBreedFetch());
 
-    // Create the repository and BLoC.
     final repository = DogCeoApi(dio);
     final bloc = BreedListBloc(repository);
     return Scaffold(

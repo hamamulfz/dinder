@@ -1,6 +1,6 @@
 part of 'breed_list_bloc.dart';
 
-// These are the states that the BLoC can emit.
+
 abstract class BreedListState extends Equatable {}
 
 class BreedListInitial extends BreedListState {

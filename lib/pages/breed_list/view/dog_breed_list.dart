@@ -28,7 +28,7 @@ class DogBreedList extends StatelessWidget {
       child: BlocBuilder<BreedListBloc, BreedListState>(
         builder: (context, state) {
           if (state is BreedListLoaded) {
-            // Display the list of breeds.
+            
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: ListView.builder(

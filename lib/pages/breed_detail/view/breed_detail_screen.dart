@@ -8,17 +8,13 @@ import '../bloc/breed_detail_bloc.dart';
 
 class BreedDetailScreen extends StatelessWidget {
   final String breed;
-  // final DogBreedBloc bloc;
-  const BreedDetailScreen(this.breed, {super.key}
-      
-      );
+
+  const BreedDetailScreen(this.breed, {super.key});
 
   @override
   Widget build(BuildContext context) {
     final dio = Dio();
-    // breedListBloc.add(DogBreedFetch());
 
-    // Create the repository and BLoC.
     final repository = DogCeoApi(dio);
     final bloc = BreedDetailBloc(repository);
     return Scaffold(

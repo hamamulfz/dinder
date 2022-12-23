@@ -35,7 +35,7 @@ You will need to execute following command to get this app running:
 ## Acknowledgment
 
 This is my first non tutorial app build with bloc.
-Within the process to create this app, I search for several example in [Github](github.com), [StackOverflow](stackoverflow.com) and [ChatGPT](https://chat.openai.com/chat). Bloc documentation also provide a very useful tutorial to learn bloc quite structured by their example.
+Within the process to create this app, I search for several example in [Github](github.com), [StackOverflow](stackoverflow.com) and [ChatGPT](https://chat.openai.com/chat). [Bloc documentation](https://bloclibrary.dev/#/gettingstarted) also provide a very useful tutorial to learn bloc quite structured by their example.
 
 Also thanks for Mr. Hasbi from Glints and Mr. Krishna from [Loratech.ai](https://www.asklora.ai/) that give me this challange to develop this app.
 
@@ -48,5 +48,5 @@ It is not a perfect app. There so much that can be added as improvement in this 
 - [x] create unit test for api
 - [ ] create unit test for bloc
 - [x] create widget test for each screen
-- [ ] create integration test for each screen
+- [ ] create integration test
 - [ ] implement swipe animation on breed matching screen [reference here](https://github.com/shubhamhackz/dating_app.git)
